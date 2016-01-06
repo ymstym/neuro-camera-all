@@ -48,6 +48,9 @@
 		</div><!-- /triggers -->
 
 		<div id="pt-main" class="pt-perspective">
+
+
+		
 			<div class="pt-page pt-page-1">
 				<h1><span>Select</span><strong>Departure</strong> Airport</h1>
 				<div class="select-wrapper">    
@@ -111,9 +114,36 @@
 			    	</div>
 			    </div>
 			</div>
+
 			<div class="pt-page pt-page-5">
 				<div class="loading-page">
 					<div class="loading-container">
+						<div id="1st-take">
+							<div id="takephoto">						
+								<div id="photo"><img src="img/barcelona01.png"></div>
+							    <div id="camera">
+							      <div class="placeholder">
+							        Your browser does not support camera access.<br>
+							        We recommend
+							        <a href="https://www.google.com/chrome/" target="_blank">Chrome</a>
+							        &mdash; modern, secure, fast browser from Google.<br>
+							        It's free.
+							      </div>
+							    </div>
+
+							    <div id="camera-buttons">
+								    <button id="take_snapshots">Take a photo!</button>    
+								    <div id="snapshots"></div>    
+								    <button id="discard_snapshot">Discard Photo</button>
+								    <button id="upload_snapshot">Download Photo</button>
+								    <i class="progress-arrow fa fa-arrow-right"></i> 
+								</div>
+							 
+							</div>
+						</div>		
+					</div>
+
+				</div>
 
 <!--original take photo codes 
 					<div id="takephoto">						
@@ -146,40 +176,7 @@
 					</div>	
 -->
 
-					<div id="takephoto">						
-						<div id="photo"><img src="img/barcelona01.png"></div>
-					    <div id="camera">
-					      <div class="placeholder">
-					        Your browser does not support camera access.<br>
-					        We recommend
-					        <a href="https://www.google.com/chrome/" target="_blank">Chrome</a>
-					        &mdash; modern, secure, fast browser from Google.<br>
-					        It's free.
-					      </div>
-					    </div><br>
-
-					    <button id="take_snapshots">Take a photo!</button>
-					    <button id="show_stream">Show stream</button><br>
-					    <div id="snapshots"></div>    
-					    <button id="discard_snapshot">Discard snapshot</button>
-					    <button id="upload_snapshot">Upload to URL</button><br>
-
-					    <input type="text" id="api_url" placeholder="https://example.com/upload"><br>
-
-					    <img src="loader.gif" id="loader">
-					    <div id="upload_status"></div>
-					    <div id="upload_result"></div>
-					 
-					</div>	
-<!-- end: original take photo codes -->
-
-
-
-
-
-
-
-<!--
+<!-- original story 
 						<div id="load-story" class="owl-carousel owl-theme">
 							<div class="item"><img src="img/barcelona01.png"></div>
 							<div class="item"><img src="img/car_2.jpg" alt="GTA V"></div>
@@ -191,9 +188,8 @@
 							<div class="bar"></div>
 						</div>
 					-->
-					</div>
 
-				</div>
+				
 				<div id="seat-page">
 					<h1><span>Choose </span><strong>your</strong> seat</h1>
 					<div class="select-wrapper">    	
@@ -224,6 +220,7 @@
 				<h1><span>Finalize</span><strong>payment</strong></h1>
 			</div>
 		</div>
+	
 
 		<div class="pt-message">
 			<p>Your browser does not support CSS animations.</p>

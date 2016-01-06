@@ -19,6 +19,10 @@ div.owl-controls {
   display: none !important;
 }
 
+button, input, #loader {
+  display: none;
+}
+
 #photo {
     position: absolute;
     z-index: -1;
@@ -26,5 +30,48 @@ div.owl-controls {
 
 #camera {
     position: relative;
+    left: 120px; 
+    top: 193px;
+    width: 100px;
+    height: 100px;
     z-index: 1;
 }
+
+#camera-buttons {
+    position: relative;
+    top: 280px;
+    z-index: 1;
+}
+
+#snapshots {
+  height: 100px;
+  margin: 0.5em 0;
+  padding: 3px;
+  border: 1px solid #aaa;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+#snapshots canvas, #snapshots img {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+
+  height: 100%;
+  margin-left: 3px;
+  border: 3px solid transparent;
+}
+
+#snapshots .selected {
+  border: 3px solid #000;
+}
+
+button, #upload_status, #upload_result, #loader {
+  margin: 0.5em;
+}
+
+
+
