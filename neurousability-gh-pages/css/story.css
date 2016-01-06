@@ -30,8 +30,8 @@ button, input, #loader {
 
 #camera {
     position: relative;
-    left: 120px; 
-    top: 193px;
+    left: 167px; 
+    top: 184px;
     width: 100px;
     height: 100px;
     z-index: 1;
