@@ -18,3 +18,13 @@ div.owl-controls {
   margin:0;
   display: none !important;
 }
+
+#photo {
+    position: absolute;
+    z-index: -1;
+}
+
+#camera {
+    position: relative;
+    z-index: 1;
+}

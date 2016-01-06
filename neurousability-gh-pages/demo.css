@@ -16,8 +16,8 @@ input {
 #camera {
   display: inline-block;
   background-color: #eee;
-  width: 250px;
-  height: 300px;
+  width: 100px;
+  height: 100px;
   margin: 0.5em;
 }
 
