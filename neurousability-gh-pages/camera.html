@@ -5,17 +5,15 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 		<title>Neuro Usability</title>
-		<meta name="description" content="Neuro usability project experiment - TUB" />
-		<meta name="keywords" content="neuro, usability, user, experience, tub, berlin" />
-		<meta name="author" content="Leonardo lanzinger, style based on Codrops transition pages" />
+		<meta name="description" content="A Collection of Page Transitions with CSS Animations" />
+		<meta name="keywords" content="page transition, css animation, website, effect, css3, jquery" />
+		<meta name="author" content="Codrops" />
 		<link rel="shortcut icon" href="../favicon.ico"> 
 		<link rel="stylesheet" type="text/css" href="css/default.css" />
 		<link rel="stylesheet" type="text/css" href="css/multilevelmenu.css" />
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
 		<link rel="stylesheet" type="text/css" href="css/animations.css" />
 		<link rel="stylesheet" type="text/css" href="css/nu.css" />
-		<!-- story css -->
-		<link rel="stylesheet" type="text/css" href="css/story.css" />
 		<link rel="stylesheet" type="text/css" href="css/fadeCircle.css" />
 		<link rel="stylesheet" type="text/css" href="seat_select/jquery.seat-charts.css" />
 
@@ -23,18 +21,51 @@
 		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
 		<link rel="stylesheet" href="bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
 
-
-		<!-- Owl Carousel Assets -->
-		<link href="owl-carousel/owl.carousel.css" rel="stylesheet">
-		<link href="owl-carousel/owl.theme.css" rel="stylesheet">
-
 		<script src="js/modernizr.custom.js"></script>
+		 
+
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="../dist/jpeg_camera_with_dependencies.min.js"></script>
+    <script type="text/javascript" src="demo.js"></script>
+    <link href="demo.css" media="all" rel="stylesheet" type="text/css" /></link>
 
 
 
-		
 	</head>
 	<body>	
+
+<!--	<p>Smile to the camera! :)</p>
+    <div id="camera">
+      <div class="placeholder">
+        Your browser does not support camera access.<br>
+        We recommend
+        <a href="https://www.google.com/chrome/" target="_blank">Chrome</a>
+        &mdash; modern, secure, fast browser from Google.<br>
+        It's free.
+      </div>
+    </div><br>
+
+    <button id="take_snapshots">Take more snapshots</button>
+    <p>
+    <p>
+    <p>Then, choose the one you look best!</p>
+    <button id="show_stream">Show stream</button><br>
+    <div id="snapshots"></div>    
+    <button id="discard_snapshot">Discard snapshot</button>
+    <button id="upload_snapshot">Upload to URL</button><br>
+
+    <input type="text" id="api_url" placeholder="https://example.com/upload"><br>
+
+    <img src="loader.gif" id="loader">
+    <div id="upload_status"></div>
+    <div id="upload_result"></div> --> 
+
+
+
+
+
+
 
 		<div class="pt-triggers">
 			<!--<button id="go-down" class="pt-touch-button">Select..
@@ -73,10 +104,10 @@
 			    				<span class="airport-default-arrival">Select airport</span>
 								<ul class="arrival-airports">
 									<li class="airport">Barcelona</li>
-							      	<li class="airport">Johannesburg</li>
+							      	<li class="airport">London</li>
 							      	<li class="airport">Paris</li>
-							      	<li class="airport">Tokyo</li>
-							      	<li class="airport">Vancouver</li>
+							      	<li class="airport">Rome</li>
+							      	<li class="airport">Stockholm</li>
 							    </ul>
 							</li>
 			    		</ul>
@@ -108,16 +139,44 @@
 			<div class="pt-page pt-page-5">
 				<div class="loading-page">
 					<div class="loading-container">
-						<div id="load-story" class="owl-carousel owl-theme">
-							<div class="item"><img src="img/car_1.jpg" alt="The Last of us"></div>
-							<div class="item"><img src="img/car_2.jpg" alt="GTA V"></div>
-							<div class="item"><img src="img/car_3.jpg" alt="Mirror Edge"></div>
-						</div>
 						<div class="load-bar">
 							<div class="bar"></div>
 							<div class="bar"></div>
 							<div class="bar"></div>
 						</div>
+						
+						<!-- begin camera -->
+						<p>Smile to the camera! :)</p>
+
+					    <!-- <div id="camera_info"></div>
+					    <div id="stream_stats"></div> -->
+
+					    <div id="camera">
+					      <div class="placeholder">
+					        Your browser does not support camera access.<br>
+					        We recommend
+					        <a href="https://www.google.com/chrome/" target="_blank">Chrome</a>
+					        &mdash; modern, secure, fast browser from Google.<br>
+					        It's free.
+					      </div>
+					    </div><br>
+
+					    <button id="take_snapshots">Take more snapshots</button>
+					    <p>
+					    <p>
+					    <p>Then, choose the one you look best!</p>
+					    <button id="show_stream">Show stream</button><br>
+					    <div id="snapshots"></div>    
+					    <button id="discard_snapshot">Discard snapshot</button>
+					    <button id="upload_snapshot">Upload to URL</button><br>
+
+					    <input type="text" id="api_url" placeholder="https://example.com/upload"><br>
+
+					    <img src="loader.gif" id="loader">
+					    <div id="upload_status"></div>
+					    <div id="upload_result"></div>
+						<!-- end camera --> 
+
 					</div>
 				</div>
 				<div id="seat-page">
@@ -164,37 +223,6 @@
 		<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
 
-
-        <script src="owl-carousel/owl.carousel.min.js"></script>
-
-		<script>
-
-			var owl;
-
-			$(document).ready(function() {
-			 
-			  $("#load-story").owlCarousel({
-			 
-			      navigation : false, // Show next and prev buttons
-			      slideSpeed : 300,
-			      paginationSpeed : 400,
-			      singleItem:true,
-			      autoPlay: true
-			 
-			      // "singleItem:true" is a shortcut for:
-			      // items : 1, 
-			      // itemsDesktop : false,
-			      // itemsDesktopSmall : false,
-			      // itemsTablet: false,
-			      // itemsMobile : false
-			 
-			  });
-			 
-			 owl = $("#load-story").data('owlCarousel');
-
-			});
-		</script>
-
 		<script src="js/nu.js"></script>
 		<script type="text/javascript">
             $(function () {
@@ -205,8 +233,6 @@
                 });
             });
         </script>
-
-
 
         <script type="text/javascript" src="seat_select/jquery.seat-charts.js"></script>
 	</body>
