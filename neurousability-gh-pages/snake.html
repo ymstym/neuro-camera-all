@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Neuro Usability</title>
+		<meta name="description" content="Neuro usability project experiment - TUB" />
+		<meta name="keywords" content="neuro, usability, user, experience, tub, berlin" />
+		<meta name="author" content="Leonardo lanzinger, style based on Codrops transition pages" />
+		<link rel="shortcut icon" href="../favicon.ico"> 
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" type="text/css" href="css/multilevelmenu.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link rel="stylesheet" type="text/css" href="css/animations.css" />
+		<link rel="stylesheet" type="text/css" href="css/nu.css" />
+		<link rel="stylesheet" type="text/css" href="css/fadeCircle.css" />
+		<link rel="stylesheet" type="text/css" href="seat_select/jquery.seat-charts.css" />
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+
+		<link rel="stylesheet" type="text/css" href="snakejs/style.css" />
+
+		<script src="js/modernizr.custom.js"></script>
+	</head>
+	<body>	
+
+		<div class="pt-triggers">
+			<!--<button id="go-down" class="pt-touch-button">Select..
+			</button>-->
+		</div><!-- /triggers -->
+
+		<div id="pt-main" class="pt-perspective">
+			<div class="pt-page pt-page-1">
+				<h1><span>Select</span><strong>Departure</strong> Airport</h1>
+				<div class="select-wrapper">    
+    				<div class="select-content departures airport-list">
+						<ul class="airport-ul">
+							<li>
+			    				<span class="airport-default-departure">Select airport</span>
+								<ul class="departure-airports">
+							      <li class="airport">Berlin</li>
+							      <li class="airport">Frankfurt</li>
+							      <li class="airport">Munich</li>
+							    </ul>
+							</li>
+						</ul>
+						<i class="progress-arrow fa fa-arrow-right"></i> 
+					</div>
+				</div>
+			</div>
+			<div class="pt-page pt-page-2">
+				<h1><span>Select</span><strong>Arrival</strong> Airport</h1>
+				<div class="select-wrapper">    	
+					<div class="select-content arrival airport-list">
+						<ul class="airport-ul">
+							<li class="margin-right non-select">
+			    				<span class="airport-default-departure"></span>
+			    			</li>
+			    			<span class="margin-right inter-boxes">to</span>
+			    			<li>
+			    				<span class="airport-default-arrival">Select airport</span>
+								<ul class="arrival-airports">
+									<li class="airport">Barcelona</li>
+							      	<li class="airport">Johannesburg</li>
+							      	<li class="airport">Paris</li>
+							      	<li class="airport">Tokyo</li>
+							      	<li class="airport">Vancouver</li>
+							    </ul>
+							</li>
+			    		</ul>
+			    		<i class="progress-arrow fa fa-arrow-right"></i> 
+			    	</div>
+			    </div>
+			</div>
+			<div class="pt-page pt-page-3">
+				<h1><span>Pick the</span><strong>Departure</strong> Date</h1>
+				<div class="select-wrapper">    	
+					<div class="select-content date">
+						<ul class="airport-ul">
+							<li class="margin-right non-select">
+			    				<span class="airport-default-departure"></span>
+			    			</li>
+			    			<span class="margin-right inter-boxes">to</span>
+			    			<li class="margin-right non-select">
+			    				<span class="airport-default-arrival"></span>
+			    			</li>
+			    			<span class="margin-right inter-boxes">on</span>
+			    		</ul>
+						<div class="calendar">
+			                <input type='text' class="date form-control" id='datetimepicker' />
+			            </div>
+			    		<i class="progress-arrow fa fa-arrow-right"></i> 
+			    	</div>
+			    </div>
+			</div>
+			<div class="pt-page pt-page-5">
+				<div class="loading-page">
+					<div class="loading-container">
+						<div class="load-bar">
+							<div class="bar"></div>
+							<div class="bar"></div>
+							<div class="bar"></div>
+						</div>
+						<!-- snake -->
+						<canvas id="canvas" width="450" height="450"></canvas>
+					</div>
+				</div>
+				<div id="seat-page">
+					<h1><span>Choose </span><strong>your</strong> seat</h1>
+					<div class="select-wrapper">    	
+						<div class="select-content date">
+							<ul class="airport-ul">
+								<li class="margin-right non-select">
+				    				<span class="airport-default-departure"></span>
+				    			</li>
+				    			<span class="margin-right inter-boxes">to</span>
+				    			<li class="margin-right non-select">
+				    				<span class="airport-default-arrival"></span>
+				    			</li>
+				    			<span class="margin-right inter-boxes">on</span>
+				    			<li class="margin-right non-select">
+				    				<span class="date-selected"></span>
+				    			</li>
+				    		</ul>
+				    	</div>
+				    </div>
+				    <div class="seat-wrapper">
+				    	<div id="seat-map" class="seat-content">
+				    		
+				    	</div>
+				    </div>
+				</div>
+			</div>
+			<div class="pt-page pt-page-6">
+				<h1><span>Finalize</span><strong>payment</strong></h1>
+			</div>
+		</div>
+
+		<div class="pt-message">
+			<p>Your browser does not support CSS animations.</p>
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="js/jquery.dlmenu.js"></script>
+		<script src="js/pagetransitions.js"></script>
+
+
+		<script type="text/javascript" src="bower_components/moment/min/moment.min.js"></script>
+		<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+		<script src="js/nu.js"></script>
+		<script type="text/javascript">
+
+			var owl;
+
+            $(function () {
+                $('#datetimepicker').datetimepicker({
+                	viewMode: 'years',
+                	format: 'DD/MM/YYYY',
+                	minDate: "1/1/2016"
+                });
+            });
+        </script>
+        <script src="snakejs/snake.js" type="text/javascript"></script>
+        <script type="text/javascript" src="seat_select/jquery.seat-charts.js"></script>
+	</body>
+</html>

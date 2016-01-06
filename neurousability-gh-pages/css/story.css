@@ -1,0 +1,20 @@
+/* load bar */
+.loading-container {
+  width: 800px;
+  position: relative;
+  display: block;
+  margin: 80px auto;
+  z-index: 99;
+}
+
+/* carousel */
+.item img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+div.owl-controls {
+  margin:0;
+  display: none !important;
+}
