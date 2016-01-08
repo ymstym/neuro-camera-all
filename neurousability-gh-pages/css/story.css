@@ -30,6 +30,7 @@ button, input, #loader {
 
 #camera {
     position: relative;
+    /* position for barcelona01.png*/
     left: 167px; 
     top: 184px;
     width: 100px;

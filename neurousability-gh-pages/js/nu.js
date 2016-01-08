@@ -70,14 +70,40 @@ $(document).ready(function() {
 
 });
 
-
+/*
+    this function displays and hides the loading interface!
+*/
 function loadingInterface(index) {
 	if (owl != null) {
 		owl.jumpTo(0);
 	}
+    // trigger storytelling
+    changeStorytelling();
 	setTimeout(
 		function() {
 			$('.pt-page-' + index + ' .loading-page').css({"opacity" : "0"}).delay(500).css({"visibility" : "hidden"});
 		}
 	,15000);
+}
+
+/*
+ this function controls the different storytelling images
+ */
+function changeStorytelling() {
+    var counter = 0;
+    $('#camera').css({"left" : "120px", "top" : "190px"});
+    setInterval(function(){
+        counter = (counter + 1) % 3;
+        $('#storypic').attr('src', 'img/barcelona0' + counter + '.png');
+        // place the camera at the right place
+        if (counter == 0) {
+            $('#camera').css({"left" : "120px", "top" : "190px"});
+        }
+        else if (counter == 1) {
+            $('#camera').css({"left" : "167px", "top" : "184px"});
+        }
+        else if (counter == 2) {
+            $('#camera').css({"left" : "495px", "top" : "70px"});
+        }
+    }, 5000);
 }
