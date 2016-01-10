@@ -3,7 +3,7 @@
   width: 800px;
   position: relative;
   display: block;
-  margin: 80px auto;
+  margin: 30px auto;
   z-index: 99;
 }
 
@@ -21,6 +21,10 @@ div.owl-controls {
 
 button, input, #loader {
   display: none;
+}
+
+#loading-bar{
+    margin-top: 20px;
 }
 
 #photo {
@@ -45,10 +49,10 @@ button, input, #loader {
 }
 
 #snapshots {
-  height: 50px;
+  height: 100px;
   margin: 0.5em 0;
   padding: 3px;
-  border: 1px solid #aaa;
+  border: 0px solid #aaa;
   white-space: nowrap;
   overflow-x: auto;
   overflow-y: hidden;
@@ -67,12 +71,31 @@ button, input, #loader {
 }
 
 #snapshots .selected {
-  border: 3px solid #000;
+  border: 3px solid #5bc0de;
 }
 
 button, #upload_status, #upload_result, #loader {
-  margin: 0.5em;
+  margin: 0.0em;
 }
 
+
+.pt-page h4 {	
+	font-weight: 300;	
+	line-height: 1;
+	letter-spacing: 6px;
+	margin: 0;
+	text-transform: uppercase;
+	word-spacing: -0.3em;
+}
+
+.pt-page h4 span {
+	font-family: 'Satisfy', serif;
+	font-weight: 400;
+	font-size: 120%;
+	text-transform: none;
+	word-spacing: 0;
+	letter-spacing: 0;
+	display: block;
+}
 
 

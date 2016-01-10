@@ -50,7 +50,7 @@
 		<div id="pt-main" class="pt-perspective">
 
 
-		
+	
 			<div class="pt-page pt-page-1">
 				<h1><span>Select</span><strong>Departure</strong> Airport</h1>
 				<div class="select-wrapper">    
@@ -115,14 +115,18 @@
 			    </div>
 			</div>
 
+
 			<div class="pt-page pt-page-5">
 				<div class="loading-page">
-					<div class="loading-container">
+                    <div id="loading-bar">
+                        <h4><center><font color="#f3f3f3">PAGE LOADING <img src="img/loading-bar06.gif"><img src="img/loading-bar06.gif"><img src="img/loading-bar06.gif"><img src="img/loading-bar06.gif"><img src="img/loading-bar06.gif"><img src="img/loading-bar06.gif"></font></center></h4>
+                    </div>
+                    
+                    <div class="loading-container">                                                      
 						<div id="1st-take">
-							<div id="takephoto">							
-							<h4>While loading, you can take a few "photos" at the beautiful destination!</h4>
-							<font color="white"><h5>See this famous beach at Bacelona? Smile, 1, 2, 3 CHEERS! :)</h5></font>				
-								<div id="photo"><img id="storypic" src="img/barcelona00.png"></div>
+							<div id="takephoto">                            
+                                <h4><span>Going to Barcelona? Smile and take a photo there!</span></h4>				
+                                <div id="photo"><img id="storypic" src="img/barcelona00.png"></div>
 							    <div id="camera">
 							      <div class="placeholder">
 							        Your browser does not support camera access.<br>
@@ -131,18 +135,22 @@
 							        &mdash; modern, secure, fast browser from Google.<br>
 							        It's free.
 							      </div>
-							    </div>
-
-							    <div id="camera-buttons">
-								    <button id="take_snapshots">Take a photo!</button>    
-								    <div id="snapshots"></div>    
-								    <button id="discard_snapshot">Discard Photo</button>
-								    <button id="upload_snapshot">Download Photo</button>
-								    Two more photos for Port Olymic and Tower								    
-								</div>						 
+							    </div>                                    
+							   
+                               <div id="camera-buttons">
+                                   <center>
+                                       <button id="take_snapshots" class="btn btn-primary btn-lg"><i class="glyphicon glyphicon-camera"></i></button>
+<!--                                       <button id="discard_snapshot" class="btn btn-info btn-sm"><i class="glyphicon glyphicon-trash"></i></button>
+                                       <button id="upload_snapshot" class="btn btn-info btn-sm" ><i class="glyphicon glyphicon-download-alt"></i></button>
+-->
+                                   </center>
+                                   <div id="snapshots"><h4><span>Choose your photos:</span></h4></div>                                   
+								</div>
+                               					 
 							</div>
 						</div>		
 					</div>
+                    
 
 				</div>
 
