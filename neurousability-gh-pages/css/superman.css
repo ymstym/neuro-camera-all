@@ -1,0 +1,12 @@
+.loading-container {
+	width: 750px;
+	position: relative;
+	display: block;
+	margin: 80px auto;
+}
+
+#canvas {
+	display: block;
+	margin: 0;
+	border: 0px;
+}

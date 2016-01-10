@@ -79,6 +79,8 @@ function loadingInterface(index) {
 	}
     // trigger storytelling
     changeStorytelling();
+    // record epoch time here - uncommento once function recordTime() is ready
+    //recordTime();
 	setTimeout(
 		function() {
 			$('.pt-page-' + index + ' .loading-page').css({"opacity" : "0"}).delay(500).css({"visibility" : "hidden"});
@@ -107,3 +109,11 @@ function changeStorytelling() {
         }
     }, 5000);
 }
+
+/*
+ this function record the time epoch of the start of the loading interfaces 
+ and the end of it (simply adding 15 seconds)
+*/
+// var CLIENT_ID = "554374579670-9nsr0i1g5hkkdb4c3dm2tv8qnshmk5s7.apps.googleusercontent.com";
+// var google_client_secret = "o_5ydrD9EpexJR-KAP-9fGSg";
+// var SCOPES = ['https://www.googleapis.com/auth/drive'];
