@@ -81,7 +81,7 @@ function loadingInterface(index) {
     // trigger storytelling
     changeStorytelling();
     // record epoch time here - uncommento once function recordTime() is ready
-    //recordTime();
+    recordTime();
 	setTimeout(
 		function() {
 			$('.pt-page-' + index + ' .loading-page').css({"opacity" : "0"}).delay(500).css({"visibility" : "hidden"});
@@ -118,3 +118,10 @@ function changeStorytelling() {
 // var CLIENT_ID = "554374579670-9nsr0i1g5hkkdb4c3dm2tv8qnshmk5s7.apps.googleusercontent.com";
 // var google_client_secret = "o_5ydrD9EpexJR-KAP-9fGSg";
 // var SCOPES = ['https://www.googleapis.com/auth/drive'];
+function recordTime() {
+    var d = new Date();
+    var formatDate = d.getFullYear() + "-" + (d.getMonth()+1) + "-" + d.getDate() + "_" + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds() + "." + d.getMilliseconds() + " \t START ";
+    formatDate = formatDate + "\n" + d.getFullYear() + "-" + (d.getMonth()+1) + "-" + d.getDate() + "_" + d.getHours() + ":" + d.getMinutes() + ":" + (d.getSeconds()+15) + "." + d.getMilliseconds() + " \t END ";
+    var blob = new Blob([formatDate], {type: "text/plain;charset=utf-8"});
+    saveAs(blob, "NU-test-" + d + ".txt")
+}
