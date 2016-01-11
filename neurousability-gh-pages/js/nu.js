@@ -123,5 +123,5 @@ function recordTime() {
     var formatDate = d.getFullYear() + "-" + (d.getMonth()+1) + "-" + d.getDate() + "_" + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds() + "." + d.getMilliseconds() + " \t START ";
     formatDate = formatDate + "\n" + d.getFullYear() + "-" + (d.getMonth()+1) + "-" + d.getDate() + "_" + d.getHours() + ":" + d.getMinutes() + ":" + (d.getSeconds()+15) + "." + d.getMilliseconds() + " \t END ";
     var blob = new Blob([formatDate], {type: "text/plain;charset=utf-8"});
-    saveAs(blob, "NU-test-" + d + ".txt")
+    saveAs(blob, "NU-test-" + d + ".txt");
 }
