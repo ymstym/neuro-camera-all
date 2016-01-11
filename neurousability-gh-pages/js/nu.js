@@ -22,7 +22,8 @@ $('.arrival .progress-arrow').click(function() {
 });
 
 $('.date .progress-arrow').click(function() {
-	$('.date-selected').html($('#datetimepicker').data("DateTimePicker").date()._i);
+    var pick_date = $('#datetimepicker').data("DateTimePicker").date()._d;
+	$('.date-selected').html(pick_date.getDate() + " / " + (pick_date.getMonth() + 1) + " / " + pick_date.getFullYear());
 	PageTransitions.nextPage(3);
 	loadingInterface(5);
 });
