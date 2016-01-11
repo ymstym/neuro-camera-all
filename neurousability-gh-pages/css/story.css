@@ -23,6 +23,7 @@ button, input, #loader {
   display: none;
 }
 
+
 #loading-bar{
     margin-top: 20px;
 }
@@ -30,6 +31,7 @@ button, input, #loader {
 #photo {
     position: absolute;
     z-index: 1;
+    text-align: center;
 }
 
 #camera {
@@ -41,6 +43,14 @@ button, input, #loader {
     height: 100px;
     z-index: -1;
 }
+
+/**
+#story-caption00, #story-caption01, #story-caption02 {
+    position: relative;
+    top: 250px;
+    z-index: 2;
+}
+**/
 
 #camera-buttons {
     position: relative;
