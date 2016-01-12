@@ -32,6 +32,10 @@ $('.date .progress-arrow').click(function() {
 	loadingInterface(5);
 });
 
+$('.seat .progress-arrow').click(function() {
+    PageTransitions.nextPage(3);
+});
+
 $(document).ready(function() {
 
     // set the random waiting time between 12 and 18 seconds 
@@ -151,7 +155,7 @@ function recordTime() {
     formatDate = formatDate + "\n" + "start time: \t" + d.getFullYear() + "-" + (d.getMonth()+1) + "-" + d.getDate() + "_" + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds() + "." + d.getMilliseconds();
     formatDate = formatDate + "\n" + "end time: \t"+ d.getFullYear() + "-" + (d.getMonth()+1) + "-" + d.getDate() + "_" + d.getHours() + ":" + d.getMinutes() + ":" + (d.getSeconds()+ (waiting_time/1000)) + "." + d.getMilliseconds();
     var blob = new Blob([formatDate], {type: "text/plain;charset=utf-8"});
-    saveAs(blob, "NU-test-" + d + ".txt");
+    saveAs(blob, "NU-test-" + participant_number + "-" + test_type + ".txt");
 }
 
 /* utility function that returns url query params */
