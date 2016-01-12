@@ -24,15 +24,50 @@
 		<script src="js/modernizr.custom.js"></script>
 	</head>
 	<body>	
-
 		<div class="pt-triggers">
-			<a href="control.html"><button id="go-down" class="pt-touch-button">Control</button></a>
-			<a href="story.html"><button id="go-down" class="pt-touch-button">Storytelling</button></a>
-			<a href="snake.html"><button id="go-down" class="pt-touch-button">Interactive</button></a>
-			<a href="superman.html"><button id="go-down" class="pt-touch-button">Superman</button></a>
+			<h4><span>Please input the participant number</span></h4>
+			<input id="part_name" class="pt-touch-button pt-touch-input" type='text' value="participant number" />
+			<a id="control_link"><button id="go-down" class="pt-touch-button">Control</button></a>
+			<a id="story_link"><button id="go-down" class="pt-touch-button">Storytelling</button></a>
+			<a id="snake_link"><button id="go-down" class="pt-touch-button">Interactive</button></a>
 		</div><!-- /triggers -->
 
 		<div id="pt-main" class="starting-page pt-perspective">			
 		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script>
+			var ready = false;
+			$('#part_name').click(function() {
+				$(this).val("");
+				ready = true;
+			});
+				$('#control_link').click(function() {
+					if (ready == true) {
+						window.location.href = "control.html" + "?participant=" + $('#part_name').val() + "&type=control";
+					}
+					else {
+						alert("Please input your participant number");
+					}
+				});
+				$('#story_link').click(function() {
+					if (ready == true) {
+						window.location.href = "story.html" + "?participant=" + $('#part_name').val() + "&type=storytelling";
+					}
+					else {
+						alert("Please input your participant number");
+					}
+				});
+				$('#snake_link').click(function() {
+					if (ready == true) {
+					window.location.href = "snake.html" + "?participant=" + $('#part_name').val() + "&type=game";
+					}
+					else {
+						alert("Please input your participant number");
+					}
+				});
+			
+
+		</script>
 	</body>
 </html>

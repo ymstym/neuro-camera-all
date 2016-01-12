@@ -108,7 +108,7 @@
 			    			<span class="margin-right inter-boxes">on</span>
 			    		</ul>
 						<div class="calendar">
-			                <input type='text' class="date form-control" id='datetimepicker' />
+			                <input type='text' class="date form-control" id='datetimepicker' placeholder="Select Date"/>
 			            </div>
 			    		<i class="progress-arrow fa fa-arrow-right"></i> 
 			    	</div>
@@ -124,9 +124,13 @@
                  
                     <div class="loading-container">                                                      
 						<div id="1st-take">
-							<div id="takephoto">                            
-                                <h4><span>Going to Barcelona? Smile and take a photo there!</span></h4>				
-                                <div id="photo"><img id="storypic" src="img/barcelona00.png"></div>
+							<div id="takephoto">                                
+                                <div id="photo"><img id="storypic" src="img/story00.png"></div>
+                                <!--
+                                <div id="story-caption00"><h4><span>Ready for Barcelona?</span></h4></div>
+                                <div id="story-caption01"><h4><span>Taking you to Barcelona now!</span></h4></div>
+                                <div id="story-caption02"><h4><span>Smile and take a photo here!</span></h4></div>
+                                -->
 							    <div id="camera">
 							      <div class="placeholder">
 							        Your browser does not support camera access.<br>
@@ -135,16 +139,17 @@
 							        &mdash; modern, secure, fast browser from Google.<br>
 							        It's free.
 							      </div>
-							    </div>                                    
-							   
+							    </div>                                    							   
                                <div id="camera-buttons">
-                                   <center>
+                                   <p align ="center">
                                        <button id="take_snapshots" class="btn btn-primary btn-lg"><i class="glyphicon glyphicon-camera"></i></button>
-<!--                                       <button id="discard_snapshot" class="btn btn-info btn-sm"><i class="glyphicon glyphicon-trash"></i></button>
+<!--                                   <button id="discard_snapshot" class="btn btn-info btn-sm"><i class="glyphicon glyphicon-trash"></i></button>
                                        <button id="upload_snapshot" class="btn btn-info btn-sm" ><i class="glyphicon glyphicon-download-alt"></i></button>
 -->
 
-                                   </center>
+
+                                   </p>
+
                                    <div id="snapshots"><h4><span>Choose your photos:</span></h4></div>                                   
 								</div>
                                					 
