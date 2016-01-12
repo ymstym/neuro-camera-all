@@ -1,6 +1,8 @@
 var airport_departure_selected = false;
 var airport_arrival_selected = false;
 
+var waiting_time;
+
 $('.departure-airports .airport').click(function() {
 	$('.airport-default-departure').html($(this).html());
 	airport_departure_selected = true;
@@ -29,6 +31,9 @@ $('.date .progress-arrow').click(function() {
 });
 
 $(document).ready(function() {
+
+    waiting_time = parseInt((Math.random() * 7) + 12) * 1000;
+    console.log(waiting_time);
 
     var sc = $('#seat-map').seatCharts({
         map: [
@@ -86,7 +91,7 @@ function loadingInterface(index) {
 		function() {
 			$('.pt-page-' + index + ' .loading-page').css({"opacity" : "0"}).delay(500).css({"visibility" : "hidden"});
 		}
-	,15000);
+	,waiting_time);
 }
 
 /*
@@ -121,7 +126,7 @@ function changeStorytelling() {
         else if (counter == 4) { // third pic
             $('#camera').css({"left" : "495px", "top" : "70px"});
         }
-    }, 3000);
+    }, waiting_time / 3);
 }
 
 /*
@@ -134,7 +139,7 @@ function changeStorytelling() {
 function recordTime() {
     var d = new Date();
     var formatDate = d.getFullYear() + "-" + (d.getMonth()+1) + "-" + d.getDate() + "_" + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds() + "." + d.getMilliseconds() + " \t START ";
-    formatDate = formatDate + "\n" + d.getFullYear() + "-" + (d.getMonth()+1) + "-" + d.getDate() + "_" + d.getHours() + ":" + d.getMinutes() + ":" + (d.getSeconds()+15) + "." + d.getMilliseconds() + " \t END ";
+    formatDate = formatDate + "\n" + d.getFullYear() + "-" + (d.getMonth()+1) + "-" + d.getDate() + "_" + d.getHours() + ":" + d.getMinutes() + ":" + (d.getSeconds()+ (waiting_time/1000)) + "." + d.getMilliseconds() + " \t END ";
     var blob = new Blob([formatDate], {type: "text/plain;charset=utf-8"});
     saveAs(blob, "NU-test-" + d + ".txt");
 }
