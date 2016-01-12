@@ -19,6 +19,15 @@
   margin-top: 240px;
   text-align: center;
 }
+.blacktext {
+   background-color: #000000; 
+    padding: 2px 4px;
+    font: 13px sans-serif;
+    text-decoration: none;
+    border: 1px solid #000;
+    border-color: #aaa #444 #444 #aaa;
+    color: #000
+}
 
 .select-content {
   display: inline-block;

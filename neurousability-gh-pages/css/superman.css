@@ -10,3 +10,12 @@
 	margin: 0;
 	border: 0px;
 }
+.blacktext {
+   background-color: #E3E1B8; 
+    padding: 2px 4px;
+    font: 13px sans-serif;
+    text-decoration: none;
+    border: 1px solid #000;
+    border-color: #aaa #444 #444 #aaa;
+    color: #000
+}

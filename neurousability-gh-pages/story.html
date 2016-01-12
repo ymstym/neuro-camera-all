@@ -121,7 +121,7 @@
                     <div id="loading-bar">
                         <h4><center><font color="#f3f3f3">PAGE LOADING <img src="img/loading-bar06.gif"><img src="img/loading-bar06.gif"><img src="img/loading-bar06.gif"><img src="img/loading-bar06.gif"><img src="img/loading-bar06.gif"><img src="img/loading-bar06.gif"></font></center></h4>
                     </div>
-                    
+                 
                     <div class="loading-container">                                                      
 						<div id="1st-take">
 							<div id="takephoto">                            
@@ -143,6 +143,7 @@
 <!--                                       <button id="discard_snapshot" class="btn btn-info btn-sm"><i class="glyphicon glyphicon-trash"></i></button>
                                        <button id="upload_snapshot" class="btn btn-info btn-sm" ><i class="glyphicon glyphicon-download-alt"></i></button>
 -->
+
                                    </center>
                                    <div id="snapshots"><h4><span>Choose your photos:</span></h4></div>                                   
 								</div>
@@ -197,8 +198,7 @@
 							<div class="bar"></div>
 						</div>
 					-->
-
-				
+			
 				<div id="seat-page">
 					<h1><span>Choose </span><strong>your</strong> seat</h1>
 					<div class="select-wrapper">    	
@@ -215,18 +215,30 @@
 				    			<li class="margin-right non-select">
 				    				<span class="date-selected"></span>
 				    			</li>
+
 				    		</ul>
+				    	<button id="redirectToHome" class="progress-arrow blacktext fa fa-arrow-right" style='display:none' > Book </button> 
 				    	</div>
+				    </div>
+				    <div>
+				    	<h3 class="pleaseSelect"> Please select one or more seats <h3>
 				    </div>
 				    <div class="seat-wrapper">
 				    	<div id="seat-map" class="seat-content">
-				    		
+				    			
 				    	</div>
 				    </div>
 				</div>
 			</div>
 			<div class="pt-page pt-page-6">
-				<h1><span>Finalize</span><strong>payment</strong></h1>
+				
+				<div class="loading-page">
+					<h1><span>The end</span><strong>Thank you <br> for completing the task <br> <br> <br> <br>Redirecting to <br> Home Page</strong></h1>
+			
+				
+				</div>
+
+				
 			</div>
 		</div>
 	
@@ -273,6 +285,31 @@
 			 owl = $("#load-story").data('owlCarousel');
 
 			});
+
+			$('#redirectToHome').click (function (e) {
+   		e.preventDefault(); //will stop the link href to call the blog page
+
+   	setTimeout(function () {
+       window.location.href = "index.html"; //will redirect to your blog page (an ex: blog.html)
+    }, 5000); //will call the function after 2 secs.
+
+});
+
+
+
+	$(document).ready(function() {
+   		$('#seat-map').click(function() {
+       		if($(this).attr('id') == 'seat-map')
+      		{
+            	$('#redirectToHome').show();           
+       		}
+
+       else {
+            $('#redirectToHome').hide();   
+       }
+  	 });
+	});
+	
 		</script>
 
 		<script src="js/FileSaver.min.js"></script>
