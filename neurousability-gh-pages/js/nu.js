@@ -138,7 +138,7 @@ function changeStorytelling() {
         else if (counter == 4) { // third pic
             $('#camera').css({"left" : "495px", "top" : "70px"});
         }
-    }, waiting_time / 3);
+    }, waiting_time / 5);
 }
 
 /*
