@@ -2,6 +2,8 @@ var airport_departure_selected = false;
 var airport_arrival_selected = false;
 
 var waiting_time;
+var participant_number;
+var test_type;
 
 $('.departure-airports .airport').click(function() {
 	$('.airport-default-departure').html($(this).html());
@@ -32,8 +34,14 @@ $('.date .progress-arrow').click(function() {
 
 $(document).ready(function() {
 
+    // set the random waiting time between 12 and 18 seconds 
     waiting_time = parseInt((Math.random() * 7) + 12) * 1000;
     console.log(waiting_time);
+
+    // get the participant number
+    participant_number = gup('participant', document.location.search);
+
+    test_type = gup('type', document.location.search);
 
     var sc = $('#seat-map').seatCharts({
         map: [
@@ -138,8 +146,20 @@ function changeStorytelling() {
 // var SCOPES = ['https://www.googleapis.com/auth/drive'];
 function recordTime() {
     var d = new Date();
-    var formatDate = d.getFullYear() + "-" + (d.getMonth()+1) + "-" + d.getDate() + "_" + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds() + "." + d.getMilliseconds() + " \t START ";
-    formatDate = formatDate + "\n" + d.getFullYear() + "-" + (d.getMonth()+1) + "-" + d.getDate() + "_" + d.getHours() + ":" + d.getMinutes() + ":" + (d.getSeconds()+ (waiting_time/1000)) + "." + d.getMilliseconds() + " \t END ";
+    var formatDate = "participant: \t" + participant_number;
+    formatDate = formatDate + "\n" + "test type: \t" + test_type;
+    formatDate = formatDate + "\n" + "start time: \t" + d.getFullYear() + "-" + (d.getMonth()+1) + "-" + d.getDate() + "_" + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds() + "." + d.getMilliseconds();
+    formatDate = formatDate + "\n" + "end time: \t"+ d.getFullYear() + "-" + (d.getMonth()+1) + "-" + d.getDate() + "_" + d.getHours() + ":" + d.getMinutes() + ":" + (d.getSeconds()+ (waiting_time/1000)) + "." + d.getMilliseconds();
     var blob = new Blob([formatDate], {type: "text/plain;charset=utf-8"});
     saveAs(blob, "NU-test-" + d + ".txt");
+}
+
+/* utility function that returns url query params */
+function gup( name, url ) {
+  if (!url) url = location.href;
+  name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+  var regexS = "[\\?&]"+name+"=([^&#]*)";
+  var regex = new RegExp( regexS );
+  var results = regex.exec( url );
+  return results == null ? null : results[1];
 }

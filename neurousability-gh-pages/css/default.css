@@ -102,3 +102,8 @@ a:hover {
 	}
 }
 
+.pt-touch-input {
+	cursor: default !important;
+	margin-bottom: 60px !important;
+}
+
